@@ -1,0 +1,140 @@
+CanvasExample1:
+#:set s dp(75)
+<CanvasExample1>:
+    Button:
+        text:'click'
+        pos:100,400
+        on_press:root.move_rectagle()
+
+<ImageExample@GridLayout>:
+    cols:3
+    Image:
+        source: "images/cake.jpg"
+    Image:
+        source: "images/cake.jpg"
+        allow_stretch: True
+        keep_ratio:False
+    Image:
+        allow_stretch: True
+        source:'images/cake.jpg'
+
+
+<WidgetExample>:
+    cols:3
+    ToggleButton:
+        text:'dont click'
+        on_state:root.noclick(self)
+    Button:
+        text:'click here'
+        on_press:root.click()
+        disabled:root.enabled
+    BoxLayout:
+        orientation:'vertical'
+        Label:
+            text:str(round(my_slider.value))
+            font_size:'30dp'
+        ProgressBar:
+            max:100
+            value:44
+    TextInput:
+        id:ii
+        text:'text'
+        size_hint:None, 1
+        width:'200dp'
+        multiline:False
+        on_text_validate:root.validation(self)
+    Label:
+        text:root.valide_text
+        size_hint:None, 1
+        width:'200dp'
+    Switch:
+        id:my_switch
+        on_active:root.switched(self)
+        size_hint:None, 1
+        width:'100dp'
+    Slider:
+        disabled:my_switch.active
+        id: my_slider
+        min:0
+        max:345
+        value:156
+        on_value:root.change(self)
+
+
+<PageLayoutExample@PageLayout>:
+    #qashvcvox
+    MyWidget:
+    BoxLayoutWidget:
+    AnchorLayoutExample:
+    GridLayoutExample:
+
+<ScrollViewExample@ScrollView>:
+    StackLayoutExample:
+        size_hint:1, None
+        height:self.minimum_height
+
+<StackLayoutExample>:
+    #irar vra tapox
+    # left-right top-bottom
+    #orientation: 'rl-bt'
+    #padding:'10dp', '10dp'
+    spacing:'10dp','10dp'
+
+
+<GridLayoutExample@GridLayout>:
+    #setka
+    rows:2
+    cols:3
+    Button:
+        text:'a'
+    Button:
+        text:'b'
+    Button:
+        text:'c'
+    Button:
+        text:'d'
+    Button:
+        text:'e'
+    Button:
+        text:'f'
+
+<AnchorLayoutExample>:
+    #uglerin kpnox
+    anchor_x:'right'
+    anchor_y:'top'
+    BoxLayout:
+
+        size_hint: .1, .1
+        Button:
+            text:"sd"
+        Button:
+            text:"sd"
+
+<BoxLayoutWidget>:
+    #sharqerov
+    orientation:'vertical'
+    Button:
+        text:'click'
+    BoxLayout:
+        spacing:'30dp'
+        Button:
+            text:'click1'
+        Button:
+            text:'click2'
+        Button:
+            text:'click3'
+    Button:
+        text:'click'
+
+<MyWidget>:
+    #chotki
+    Button:
+        text:'this is blue'
+        color:'green'
+        pos: '200dp', '200dp'
+        size: '80dp', '80dp'
+    Label:
+        text:'this is green'
+        color:'blue'
+        pos: '300dp', '300dp'
+        size: '80dp', '80dp'
